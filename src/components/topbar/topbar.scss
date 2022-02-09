@@ -2,45 +2,61 @@
 
 .topbar {
     width: 100%;
+    max-width: $maxWidth;
     height: 70px;
-    background-color: white;
-    color: $mainColor;
+    background-color: $blueColor;
+    color: $whiteColor;
     position: fixed;
     top: 0;
     z-index: 3;
     transition: all 1s ease;
 
     .wrapper {
-        padding: 10px 30px;
+        height: 70px;
+        padding: 0 30px;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        justify-items: center;
 
         .left {
             display: flex;
             align-items: center;
 
-            .logo {
-                font-size: 40px;
-                font-weight: 700;
+            .iconHouse {
+                font-size: 45px;
                 text-decoration: none;
-                color: inherit;
+                color: $whiteColor;
                 margin-right: 40px;
             }
 
             .itemContainer {
                 display: flex;
                 align-items: center;
-                margin-left: overwrite, 30px;
+                margin-left: 30px;
 
-                .icon {
-                    font-size: 18px;
+                @include mobile {
+                    display: none;
+                }
+
+                .iconGitHub {
+                    font-size: 25px;
+                    margin-right: 5px;
+                    color: $whiteColor
+                }
+
+                .iconMail {
+                    font-size: 25px;
                     margin-right: 5px;
                 }
 
-                span {
+                a, span {
                     font-size: 15px;
                     font-weight: 500;
+                    text-decoration: none;
+                    display: flex;
+                    align-items: center;
+                    color: $whiteColor;
                 }
             }
         }
@@ -58,7 +74,7 @@
                 span {
                     width: 100%;
                     height: 3px;
-                    background-color: $mainColor;
+                    background-color: $whiteColor;
                     transform-origin: left;
                     transition: all 2s ease;
                 }
@@ -67,21 +83,22 @@
     }
 
     &.active {
-        background-color: $mainColor;
-        color: white;
+        background-color: $orangeColor;
+        color: $whiteColor;
 
         .hamburger {
             span {
-                &first-child {
-                    background-color: white;
-                    transform: rotate(45de);
+                &:first-child {
+                    background-color: $whiteColor;
+                    transform: rotate(45deg);
                 }
-                &:nth-child {
-                    background-color: white;
+                &:nth-child(2) {
+                    background-color: $whiteColor;
+                    opacity: 0;
                 }
                 &:last-child {
-                    background-color: white;
-                    transform: rotate(-45de);
+                    background-color: $whiteColor;
+                    transform: rotate(-45deg);
                 }
             }
         }

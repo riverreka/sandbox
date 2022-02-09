@@ -1,6 +1,7 @@
 import './intro.scss';
 import { init } from 'ityped';
 import { useEffect, useRef } from 'react';
+import { ArrowDownward } from '@material-ui/icons';
 
 export default function Intro() {
 
@@ -11,7 +12,7 @@ export default function Intro() {
       showCursor: false,
       backDelay: 1500,
       backSpeed: 60,
-      strings: ['Developer', 'Designer', 'Misician']
+      strings: ['develop webpages', 'find solutions', 'contribute teams']
     });
   },[])
   return (
@@ -23,15 +24,15 @@ export default function Intro() {
       </div>
       <div className="right">
         <div className="wrapper">
-          <h2>Hi there! I'm</h2>
+          <h2>Welcome! My name is</h2>
           <h1>Reka</h1>
           <h3>
-            Freelance <span ref={ textRef }>Designer</span>
+            Yes, I can <span ref={ textRef }></span>
           </h3>
         </div>
-        <a href="#portfolio">
-          <img src="assets/down.jpg" alt="" />
-        </a>
+       {/* <a href="#portfolio">
+          <ArrowDownward className='iconArrowDownward'/>
+        </a> */}
       </div>
     </div>
   );

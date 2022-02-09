@@ -1,1 +1,18 @@
-$mainColor: #15023a;
+$blueColor: #223145;
+$whiteColor: antiquewhite;
+$orangeColor: #b54921;
+$maxWidth: 1280px;
+
+$width: 768px;
+
+@mixin mobile {
+    @media (max-width: #{$width}){
+        @content
+    }
+}
+
+body {
+    max-width: $maxWidth;
+    margin: auto;
+    background-color: $whiteColor;
+}
