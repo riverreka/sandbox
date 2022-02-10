@@ -1,6 +1,6 @@
 import "./about.scss";
 import Navarrow from '../navarrow/Navarrow';
-import { EmojiEvents, Code, Book } from '@material-ui/icons';
+import { EmojiEvents, Code } from '@material-ui/icons';
 
 export default function About() {
   const natureIcon = () => (
