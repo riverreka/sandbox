@@ -1,7 +1,7 @@
 import './intro.scss';
+import Navarrow from '../navarrow/Navarrow';
 import { init } from 'ityped';
 import { useEffect, useRef } from 'react';
-import { ArrowDownward } from '@material-ui/icons';
 
 export default function Intro() {
 
@@ -30,10 +30,8 @@ export default function Intro() {
             Yes, I can <span ref={ textRef }></span>
           </h3>
         </div>
-       {/* <a href="#portfolio">
-          <ArrowDownward className='iconArrowDownward'/>
-        </a> */}
       </div>
+      <Navarrow next="#portfolio" />
     </div>
   );
 }

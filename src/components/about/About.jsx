@@ -1,4 +1,5 @@
 import "./about.scss";
+import Navarrow from '../navarrow/Navarrow';
 import { EmojiEvents, Code, Book } from '@material-ui/icons';
 
 export default function About() {
@@ -35,25 +36,40 @@ export default function About() {
       "It is with much enthusiasm that I recommend Reka Vida. She has been my collaborator for multiple tasks during her volunteer work at Oslo International Hub. She displayed a level of analytical thought that has been very useful in our projects. Her skills are truly phenomenal, with wide-ranging intellect. She is ready to assume a job position and possesses the self-motivation to successfully create and execute the tasks required. Please let me know if I can provide any more information to strengthen her candidacy. She has a very special spark, and I trust she will go far in making every working place a better company.",
     },
   ];
+
+  const Name = (props) => {
+    if (props.name === "") {
+      return "";
+    }
+    return (<h3>{props.name}</h3>)
+  }
+
   return (
-    <div className="about">
+    <div className="about" id="about">
       <h1>About me</h1>
       <div className="container">
         {data.map((d) => (
           <div className={d.featured ? "card featured" : "card"}>
             <div className="top">
-              <d.img className="user"/>
+              <div className="top-content">
+                <d.img className="user"/>
+              </div>
             </div>
             <div className="center">
-              {d.desc}
+              <div className="center-content">
+                {d.desc}
+              </div>
             </div>
             <div className="bottom">
-              <h3>{d.name}</h3>
-              <h4>{d.title}</h4>
+              <div className="bottom-content">
+                <Name name={d.name} />
+                <h4>{d.title}</h4>
+              </div>
             </div>
           </div>
         ))}
       </div>
+      <Navarrow next="#contact" />
     </div>
   );
 }

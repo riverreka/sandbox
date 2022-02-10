@@ -4,8 +4,18 @@
   background-color: $whiteColor;
   display: flex;
 
+  .arrowDownward {
+    display: none;
+  }
+  
   @include mobile {
     flex-direction: column;
+
+    .arrowDownward {
+      align-self: center;
+      flex-shrink: 0;
+      transform: rotate(180deg);
+    }  
   }
 
   .left {
@@ -30,6 +40,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    @include mobile {
+      flex: 2;
+    }
 
     h2 {
       font-size: 30px;

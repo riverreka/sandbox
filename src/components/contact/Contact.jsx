@@ -1,5 +1,6 @@
-import { useState } from "react";
 import "./contact.scss";
+import Navarrow from '../navarrow/Navarrow';
+import { useState } from "react";
 
 export default function Contact() {
   const [message, setMessage] = useState(false);
@@ -22,6 +23,7 @@ export default function Contact() {
           {message && <span>Thank you!</span>}
         </form>
       </div>
+      <Navarrow next="#intro" />
     </div>
   );
 }

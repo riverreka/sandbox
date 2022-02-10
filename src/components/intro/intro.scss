@@ -4,9 +4,16 @@
     background-color: $whiteColor;
     display: flex;
 
+    .arrowDownward {
+        display: none;
+    }
+
     @include mobile {
         flex-direction: column;
         align-items: center;
+        .arrowDownward {
+            display: inherit;
+        }
     }
 
     .left {
@@ -21,8 +28,7 @@
         }
 
         .imgContainer {
-            width: 350px;
-            height: 350px;
+            width: 80%;
             background-color: $whiteColor;
             border-radius: 50%;
             display: flex;
@@ -32,6 +38,7 @@
             @include mobile {
                 align-items: start;
                 height: 250px;
+                width: auto;
             }
 
 
@@ -95,21 +102,6 @@
                 span {
                     font-size: inherit;
                     color: $orangeColor;
-                }
-            }
-        }
-
-        a {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 40px;
-            animation: arrowBlink 2s infinite;
-            color: $blueColor;
-
-            @keyframes arrowBlink {
-                100%{
-                    opacity: 0;
                 }
             }
         }

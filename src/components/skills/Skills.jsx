@@ -1,9 +1,13 @@
-import { useState } from "react";
 import './skills.scss';
+import scssVars from '../../global.scss';
+import Navarrow from '../navarrow/Navarrow';
+import { useState, useEffect } from "react";
 
 export default function Skills() {
   
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentWidth, setCurrentWidth] = useState(window.innerWidth);
+  
   const data = [
     {
       id: '1',
@@ -31,6 +35,20 @@ export default function Skills() {
     }
   ];
 
+  const maxWidth = parseInt(scssVars.maxWidth.replace('px',''));
+  const updateCurrentWidth = () => {
+    if (window.innerWidth < maxWidth) {
+      setCurrentWidth(window.innerWidth);
+    } else {
+      setCurrentWidth(maxWidth);
+    }
+    console.log(currentWidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", updateCurrentWidth);
+  });
+
   const handleClick = (way) => {
     way === "left"
       ? setCurrentSlide(currentSlide > 0 ? currentSlide - 1 : 2)
@@ -38,11 +56,11 @@ export default function Skills() {
   };
 
   return (
-    <div className='works' id='works'>
+    <div className='skills' id='skills'>
       <h1>Skills</h1>
-      <div className="slider" style={{ transform:`translateX(-${currentSlide * 100}vw)` }}>
+      <div className="slider" style={{ transform: `translateX(-${currentSlide * currentWidth}px)` }}>
         { data.map(d => (
-        <div className="container">
+        <div className="container" style={{ width: `${currentWidth}px`}}>
           <div className="item">
             <div className="left">
               <div className="leftContainer">
@@ -67,6 +85,7 @@ export default function Skills() {
       </div>
       <img src="assets/sideArrow.png" className='arrow left' alt="" onClick={() => handleClick("left")}/>
       <img src="assets/sideArrow.png" className='arrow right' alt="" onClick={() => handleClick()}/>
+      <Navarrow next="#about" />
     </div>
   );
 }

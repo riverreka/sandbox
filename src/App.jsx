@@ -1,4 +1,3 @@
-// import logo from './logo.svg';
 import Topbar from './components/topbar/Topbar';
 import Intro from './components/intro/Intro';
 import Portfolio from './components/portfolio/Portfolio';

@@ -1,0 +1,18 @@
+@import '../../global.scss';
+
+.arrowDownward {
+    width: 50px;
+    z-index: 100;
+
+    .iconArrowDownward {
+        font-size: 50px;
+        animation: arrowBlink 2s infinite;
+        color: $blueColor;
+
+        @keyframes arrowBlink {
+            100%{
+                opacity: 0;
+            }
+        }
+    }
+}

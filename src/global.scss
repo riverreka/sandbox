@@ -1,7 +1,7 @@
 $blueColor: #223145;
 $whiteColor: antiquewhite;
 $orangeColor: #b54921;
-$maxWidth: 1280px;
+$maxWidth: 1280px; // only use px or change unit for slider class
 
 $width: 768px;
 
@@ -12,7 +12,9 @@ $width: 768px;
 }
 
 body {
-    max-width: $maxWidth;
-    margin: auto;
     background-color: $whiteColor;
+}
+
+:export {
+    maxWidth: $maxWidth;
 }
