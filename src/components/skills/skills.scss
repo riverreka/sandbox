@@ -48,6 +48,7 @@
     @include mobile {
         .arrowDownward {
             position: absolute;
+            display: inherit;
             bottom: 2vh;
             left: calc(50vw - 25px);
 

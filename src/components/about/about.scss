@@ -13,13 +13,35 @@
   }
 
   @include mobile{
-    justify-content: space-around;
-    height: fit-content;
+    justify-content: space-between;
+    height: 100%;
     .arrowDownward {
+      position: relative;
+      bottom: 2vh;
       display: inherit;
     }
   }
 
+  .arrow {
+    display: none;
+    height: 40px;
+    margin-top: 40vh;
+    position: absolute;
+    cursor: pointer;
+
+    @include mobile {
+        display: inherit;
+    }
+
+    &.left {
+        left: -1vw;
+        transform: rotateY(180deg);
+    }
+
+    &.right {
+        right: -1vw;
+    }
+  }
 
   h1 {
     font-size: 2em;
@@ -49,8 +71,12 @@
         }
 
     @include mobile{
-      flex-direction: column;
-      justify-content: space-between;
+      width: max-content;
+      position: absolute;
+      margin-top: 5vh;
+      left: 0;
+      transition: all 0.7s ease-out;
+      justify-content: start;
     }
 
     .card {
@@ -63,11 +89,14 @@
       flex-direction: column;
       justify-content: space-between;
       padding: 20px;
+      margin: 0 20px;
       transition: all 1s ease;
 
       @include mobile{
-        width: 70%;
-        margin: 10px 0 0 0;
+        width: 60vw;
+        flex-shrink: 0;
+        margin: 0 15vw;
+        padding: 5vw;
         scrollbar-width: none; //for Firefox
         &::-webkit-scrollbar {
             display: none;

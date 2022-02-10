@@ -50,6 +50,7 @@
     @include mobile {
         .arrowDownward {
             position: relative;
+            display: inherit;
             flex-shrink: 0;
         }
     }

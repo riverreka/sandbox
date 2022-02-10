@@ -1,12 +1,17 @@
 import "./about.scss";
+import scssVars from '../../global.scss';
 import Navarrow from '../navarrow/Navarrow';
+import { useState, useEffect } from "react";
 import { EmojiEvents, Code } from '@material-ui/icons';
 
 export default function About() {
   const natureIcon = () => (
     <svg class="MuiSvgIcon-root user" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="NaturePeopleIcon"><path d="M22.17 9.17c0-3.87-3.13-7-7-7s-7 3.13-7 7c0 3.47 2.52 6.34 5.83 6.89V20H6v-3h1v-4c0-.55-.45-1-1-1H3c-.55 0-1 .45-1 1v4h1v5h16v-2h-3v-3.88c3.47-.41 6.17-3.36 6.17-6.95zM4.5 11c.83 0 1.5-.67 1.5-1.5S5.33 8 4.5 8 3 8.67 3 9.5 3.67 11 4.5 11z"></path></svg>
   );
-  
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentWidth, setCurrentWidth] = useState(window.innerWidth);
+
   const data = [
     {
       id: 1,
@@ -24,7 +29,7 @@ export default function About() {
       icon: "assets/youtube.png",
       desc:
         "As a nature-lover, I enjoy to spend time in the forest after a long day, try out new things like skating recently or just delve into one of Knausgård's books in front of our fireplace",
-      featured: true,
+      featured: false,
     },
     {
       id: 3,
@@ -44,10 +49,30 @@ export default function About() {
     return (<h3>{props.name}</h3>)
   }
 
+  const maxWidth = parseInt(scssVars.maxWidth.replace('px',''));
+  const updateCurrentWidth = () => {
+    if (window.innerWidth < maxWidth) {
+      setCurrentWidth(window.innerWidth);
+    } else {
+      setCurrentWidth(maxWidth);
+    }
+    console.log(currentWidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", updateCurrentWidth);
+  });
+
+  const handleClick = (way) => {
+    way === "left"
+      ? setCurrentSlide(currentSlide > 0 ? currentSlide - 1 : 2)
+      : setCurrentSlide(currentSlide < data.length - 1 ? currentSlide + 1 : 0);
+  };
+
   return (
     <div className="about" id="about">
       <h1>About me</h1>
-      <div className="container">
+      <div className="container" style={{ transform: `translateX(-${currentSlide * currentWidth}px)` }}>
         {data.map((d) => (
           <div className={d.featured ? "card featured" : "card"}>
             <div className="top">
@@ -69,6 +94,8 @@ export default function About() {
           </div>
         ))}
       </div>
+      <img src="assets/sideArrow.png" className='arrow left' alt="" onClick={() => handleClick("left")}/>
+      <img src="assets/sideArrow.png" className='arrow right' alt="" onClick={() => handleClick()}/>
       <Navarrow next="#contact" />
     </div>
   );
