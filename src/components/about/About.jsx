@@ -28,7 +28,7 @@ export default function About() {
       img: natureIcon,
       icon: "assets/youtube.png",
       desc:
-        "As a nature-lover, I enjoy to spend time in the forest after a long day, try out new things like skating recently or just delve into one of Knausgård's books in front of our fireplace",
+        "As a nature-lover, I enjoy spending time in the forest after a long day, try out new things like skating recently or just delve into one of Knausgård's books in front of our fireplace.",
       featured: false,
     },
     {

@@ -42,7 +42,6 @@ export default function Skills() {
     } else {
       setCurrentWidth(maxWidth);
     }
-    console.log(currentWidth);
   };
 
   useEffect(() => {

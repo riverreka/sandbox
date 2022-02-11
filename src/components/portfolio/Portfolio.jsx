@@ -27,6 +27,7 @@ export default function Portfolio() {
           <div className='item__descr'>
             <h3 className='item__title'>ToDo App with Redux</h3>
             <p>A handy app for listing everyday tasks to do with a possibility to edit, remove and mark as done.</p>
+            <a href='https://github.com/riverreka/todoAppRedux' target="_blank" rel="noreferrer">View code on GitHub</a>
           </div>
         </div>
         <div className="item">
@@ -35,6 +36,7 @@ export default function Portfolio() {
           <div className='item__descr'>
             <h3 className='item__title'>Black Friday budget tracker</h3>
             <p>BF is always stressed by the limited time and money. My app helps to set an initial threshold for the availble budget and easily track the spendings. Your only task is to focus on the best deals then :)</p>
+            <a href='https://github.com/riverreka/black-friday-budget-tracker' target="_blank" rel="noreferrer">View code on GitHub</a>
           </div>
         </div>
         <div className="item">
@@ -43,6 +45,7 @@ export default function Portfolio() {
           <div className='item__descr'>
             <h3 className='item__title'>Webshop by Team Pepper</h3>
             <p>Our mob built a TechShop using Gatsby, Contentful, ProsgresQL, React and Stripe</p>
+            <a href='https://github.com/riverreka/final-project' target="_blank" rel="noreferrer">View code on GitHub</a>
           </div>
         </div>
       </div>
