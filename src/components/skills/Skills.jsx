@@ -5,8 +5,10 @@ import { useState, useEffect } from "react";
 
 export default function Skills() {
   
+  const maxWidth = parseInt(scssVars.maxWidth.replace('px',''));
+
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [currentWidth, setCurrentWidth] = useState(window.innerWidth);
+  const [currentWidth, setCurrentWidth] = useState(window.innerWidth < maxWidth ? window.innerWidth : maxWidth);
   
   const data = [
     {
@@ -35,7 +37,7 @@ export default function Skills() {
     }
   ];
 
-  const maxWidth = parseInt(scssVars.maxWidth.replace('px',''));
+  
   const updateCurrentWidth = () => {
     if (window.innerWidth < maxWidth) {
       setCurrentWidth(window.innerWidth);
