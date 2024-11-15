@@ -60,8 +60,8 @@ export default function Skills() {
     <div className='skills' id='skills'>
       <h1>Skills</h1>
       <div className="slider" style={{ transform: `translateX(-${currentSlide * currentWidth}px)` }}>
-        { data.map(d => (
-        <div className="container" style={{ width: `${currentWidth}px`}}>
+        { data.map((d, index) => (
+        <div className="container" key={ index } style={{ width: `${currentWidth}px`}}>
           <div className="item">
             <div className="left">
               <div className="leftContainer">
@@ -74,8 +74,8 @@ export default function Skills() {
               </div>
             </div>
             <div className="right">
-              { d.icons.map( i => (
-                <i class={`devicon-${i}-plain colored`}>
+              { d.icons.map( (i, index) => (
+                <i className={`devicon-${i}-plain colored`} key={ index }>
                   <p>{i.split('-')[0]}</p>
                 </i>
               ))}
