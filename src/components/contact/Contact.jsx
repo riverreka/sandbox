@@ -1,6 +1,6 @@
 import "./contact.scss";
 import Navarrow from '../navarrow/Navarrow';
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import emailjs from 'emailjs-com';
 
 export default function Contact() {
