@@ -28,6 +28,7 @@ export default function Portfolio() {
             <h3 className='item__title'>ToDo App with Redux</h3>
             <p>A handy app for listing everyday tasks to do with a possibility to edit, remove and mark as done.</p>
             <a href='https://github.com/riverreka/todoAppRedux' target="_blank" rel="noreferrer">View code on GitHub</a>
+            <a href='https://rekavida.com/todo-redux/' target="_blank" rel="noreferrer">Try it for yourself</a>
           </div>
         </div>
         <div className="item">
