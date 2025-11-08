@@ -16,7 +16,7 @@ jobs:
           node-version: 20.18.0
 
       - name: Yarn Setup
-        uses: DerYeger/yarn-setup-action@v2
+        uses: DerYeger/yarn-setup-action@v2.0.21
         with:
           node-version: 20.18.0
 
